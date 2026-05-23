@@ -3,10 +3,13 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     BOT_TOKEN: str
-    OPENAI_API_KEY: str
 
-    # Модель ИИ. Значение зададим на Bothost в переменных окружения.
-    OPENAI_MODEL: str = "gpt-4o-mini"
+    # Gemini вместо OpenAI
+    GEMINI_API_KEY: str
+
+    # Модель Gemini.
+    # Gemini 2.5 Flash — хороший вариант по скорости и цене/качеству.
+    GEMINI_MODEL: str = "gemini-2.5-flash"
 
     # Данные для входа в Tilda
     TILDA_LOGIN: str | None = None
